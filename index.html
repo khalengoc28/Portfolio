@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kha Le — About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            accent: '#2563eb',      /* blue-600 */
+            accentDark: '#1d4ed8',  /* blue-700 */
+            muted: '#6b7280',       /* gray-500 */
+            border: '#e5e7eb',      /* gray-200 */
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Global ── */
+    body { font-family: 'Inter', system-ui, sans-serif; color: #1f2937; }
+    h1, h2, h3 { font-family: 'Source Serif 4', Georgia, serif; }
+
+    /* ── Nav active link underline ── */
+    .nav-link { position: relative; }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: #2563eb;
+    }
+
+    /* ── Subtle section dividers ── */
+    .section-divide { border-top: 1px solid #e5e7eb; }
+
+    /* ── Print-friendly ── */
+    @media print {
+      nav, footer { display: none; }
+      body { font-size: 11pt; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- ════════════════════════════════════════════
+       NAVIGATION  (shared across all 3 pages)
+       ════════════════════════════════════════════ -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="font-serif text-xl font-semibold tracking-tight text-gray-900 hover:text-accent transition">Kha Le</a>
+      <div class="flex gap-6 text-sm font-medium text-gray-600">
+        <a href="index.html"    class="nav-link active hover:text-accent transition">About</a>
+        <a href="projects.html" class="nav-link hover:text-accent transition">Projects</a>
+        <a href="vitae.html"    class="nav-link hover:text-accent transition">Vitae</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-16">
+
+    <!-- ════════════════════════════════════════════
+         HERO SECTION
+         ════════════════════════════════════════════ -->
+    <section class="flex flex-col md:flex-row items-start gap-8">
+
+      <!-- ┌──────────────────────────────────────────┐
+           │  PHOTO PLACEHOLDER                        │
+           │  Replace the src="" below with your photo │
+           │  e.g. src="photo.jpg"                     │
+           │  Place your photo file in the same folder │
+           │  as this HTML file.                       │
+           └──────────────────────────────────────────┘ -->
+      <div class="flex-shrink-0">
+        <img
+          src=""
+          alt="Photo of Kha Le"
+          class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover bg-gray-200 border border-gray-200"
+          onerror="this.style.display='none'"
+        />
+        <!-- If no photo is set yet, this gray circle acts as placeholder -->
+        <noscript><div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200"></div></noscript>
+      </div>
+
+      <div class="space-y-3">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Kha Le</h1>
+        <p class="text-lg text-accent font-medium">
+          Mathematics &amp; Neuroscience · Computational Modeling · Decision-Making Research
+        </p>
+        <p class="text-base leading-relaxed text-gray-600 max-w-xl">
+          I am a senior at <strong class="text-gray-800">Wabash College</strong> pursuing a B.A. in Mathematics with a concentration in Neuroscience. My research sits at the intersection of computational modeling, decision-making, and motor control — investigating how the brain deliberates and commits to action under uncertainty.
+        </p>
+        <p class="text-sm text-muted flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+          Crawfordsville, Indiana, USA
+        </p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         NEWS
+         ════════════════════════════════════════════ -->
+    <section class="section-divide pt-12">
+      <h2 class="text-2xl font-semibold mb-6">News</h2>
+
+      <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  HOW TO ADD NEWS ENTRIES                                        ║
+      ║                                                                 ║
+      ║  Copy the <tr> block below and paste it inside the <tbody>.     ║
+      ║  Replace the date and description with your own content.        ║
+      ║                                                                 ║
+      ║  TEMPLATE:                                                      ║
+      ║  <tr class="border-b border-gray-100">                         ║
+      ║    <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap   ║
+      ║        align-top">MMM YYYY</td>                                 ║
+      ║    <td class="py-3 text-sm leading-relaxed">                    ║
+      ║      Your news description here.                                ║
+      ║    </td>                                                        ║
+      ║  </tr>                                                          ║
+      ║                                                                 ║
+      ║  Most recent entries go at the TOP of the <tbody>.              ║
+      ╚══════════════════════════════════════════════════════════════════╝
+      -->
+
+      <table class="w-full text-left">
+        <thead class="sr-only"><tr><th>Date</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Jan 2025</td>
+            <td class="py-3 text-sm leading-relaxed">Presented poster at the 25th Wabash Celebration of Student Research, Scholarship and Creative Work.</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Nov 2024</td>
+            <td class="py-3 text-sm leading-relaxed">Presented poster at the 16th Midwest Great Lakes Undergraduate Research Symposium (mGluRs) in Neuroscience, Oberlin, OH.</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Summer 2025</td>
+            <td class="py-3 text-sm leading-relaxed">Completed research internship at the University of Delaware, Health Science Complex, under Dr. Joshua Cashaback.</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Summer 2024</td>
+            <td class="py-3 text-sm leading-relaxed">Awarded Summer Research Grant ($3,600) from the Wabash College Psychology Department.</td>
+          </tr>
+          <!-- ADD MORE NEWS ENTRIES ABOVE THIS LINE -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         SELECTED PUBLICATIONS
+         ════════════════════════════════════════════ -->
+    <section class="section-divide pt-12">
+      <h2 class="text-2xl font-semibold mb-6">Selected Publications</h2>
+
+      <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  HOW TO ADD PUBLICATIONS                                        ║
+      ║                                                                 ║
+      ║  Copy the <li> block below and paste it inside the <ol>.        ║
+      ║  Replace the content with your own citation.                    ║
+      ║  Bold your name with <strong>.                                  ║
+      ║  Italicize the title with <em>.                                 ║
+      ║                                                                 ║
+      ║  TEMPLATE:                                                      ║
+      ║  <li class="pl-2 pb-4 text-sm leading-relaxed text-gray-700">  ║
+      ║    <strong>Le, K. N.</strong>, Co-Author, A. B., Advisor, C. D. ║
+      ║    (YEAR). <em>Title of the paper or poster.</em>               ║
+      ║    Venue or journal name, Location.                             ║
+      ║  </li>                                                          ║
+      ║                                                                 ║
+      ║  Most recent publications go at the TOP of the list.            ║
+      ╚══════════════════════════════════════════════════════════════════╝
+      -->
+
+      <ol class="list-decimal list-outside ml-5 space-y-1">
+        <li class="pl-2 pb-4 text-sm leading-relaxed text-gray-700">
+          <strong class="text-gray-900">Le, K. N.</strong>, Arnold, E. O., Schmitzer-Torbert, N. (Jan 24, 2025). <em>Snapshot examination of vicarious-trial-and-error through gaze behavior and deliberation in a translational virtual navigation task.</em> Poster session presented at the 25th Wabash Celebration of Student Research, Scholarship and Creative Work, Crawfordsville, IN.
+        </li>
+        <li class="pl-2 pb-4 text-sm leading-relaxed text-gray-700">
+          <strong class="text-gray-900">Le, K. N.</strong>, Arnold, E. O., Schmitzer-Torbert, N. (Nov 2, 2024). <em>Characterization of vicarious trial-and-error and visual sampling in humans performing a translational virtual navigation foraging task.</em> Poster session presented at the 16th Midwest Great Lakes Undergraduate Research Symposium (mGluRs) in Neuroscience, Oberlin, OH.
+        </li>
+        <!-- ADD MORE PUBLICATIONS ABOVE THIS LINE -->
+      </ol>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         BACKGROUND & RESEARCH INTERESTS
+         ════════════════════════════════════════════ -->
+    <section class="section-divide pt-12">
+      <h2 class="text-2xl font-semibold mb-6">Background &amp; Research Interests</h2>
+      <div class="space-y-4 text-sm leading-relaxed text-gray-700">
+        <p>
+          I am a Vietnamese-born mathematician and aspiring neuroscientist studying at Wabash College, where I am completing a B.A. in Mathematics with a concentration in Neuroscience (expected May 2026). My academic trajectory has been shaped by a deep fascination with how the brain transforms sensory evidence into decisions and motor actions — a question that lives at the crossroads of applied mathematics, cognitive science, and computational neuroscience.
+        </p>
+        <p>
+          At Wabash, I work with <strong class="text-gray-800">Dr. Neil Schmitzer-Torbert</strong> on the behavioral and oculomotor correlates of deliberation. Our project uses eye-tracking (Tobii 5th-Gen) and a translational virtual navigation foraging task to characterize <em>vicarious trial-and-error</em> (VTE) — the head-scanning behavior observed in rodents at choice points — in human participants (n&nbsp;=&nbsp;56). By analyzing gaze patterns, dwelling times, and movement trajectories, we investigate how visual sampling signatures map onto the deliberative processes previously documented in animal models. This line of work bridges comparative psychology and decision neuroscience, asking whether the same computational principles governing rodent navigation extend to human choice behavior.
+        </p>
+        <p>
+          During the summer of 2025, I joined <strong class="text-gray-800">Dr. Joshua Cashaback's Motor Control &amp; Decision-Making Lab</strong> at the University of Delaware as a research intern. There I trained intensively in the neuromechanics of human motion — optimal feedback control, linear-quadratic Gaussian regulators, Kalman filtering, and cost-function optimization — and replicated computational models of urgency-gated decisions within the token-task framework. My ongoing project designs mathematical models to explain how humans optimally plan and execute reaching movements when facing multiple potential targets simultaneously, linking motor planning with the dynamics of evidence accumulation.
+        </p>
+        <p>
+          Together, these two research threads form a coherent program: Dr.&nbsp;Schmitzer-Torbert's work lets me probe <em>where people look</em> and <em>how long they deliberate</em> before committing to a choice, while Dr.&nbsp;Cashaback's work lets me model <em>how that deliberation unfolds in the motor system</em> as the hand moves toward a target. The common thread is understanding decision-making as a dynamic, embodied process — one that can be captured by rigorous mathematical frameworks.
+        </p>
+        <p>
+          My broader research interests include computational and theoretical neuroscience, stochastic processes in neural decision circuits, sensorimotor integration, and the application of mathematical modeling to questions in cognitive and behavioral science. I am actively preparing to pursue graduate study (M.S./Ph.D.) in computational neuroscience or a related quantitative discipline.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER  (shared across all 3 pages)
+       ════════════════════════════════════════════ -->
+  <footer class="border-t border-gray-100 mt-12">
+    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+      <span>&copy; 2025 Kha Le. All rights reserved.</span>
+      <div class="flex gap-4">
+        <a href="mailto:khale.ngoc28@gmail.com" class="hover:text-accent transition">Email</a>
+        <!-- Add more social links here if desired, e.g. GitHub, LinkedIn, Google Scholar -->
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

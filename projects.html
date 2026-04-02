@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kha Le — Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            accent: '#2563eb',
+            accentDark: '#1d4ed8',
+            muted: '#6b7280',
+            border: '#e5e7eb',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; color: #1f2937; }
+    h1, h2, h3 { font-family: 'Source Serif 4', Georgia, serif; }
+    .nav-link { position: relative; }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: #2563eb;
+    }
+    /* Tab system */
+    .tab-btn { transition: all 0.15s ease; }
+    .tab-btn.active { color: #2563eb; border-color: #2563eb; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    @media print {
+      nav, footer { display: none; }
+      body { font-size: 11pt; }
+      .tab-panel { display: block !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="font-serif text-xl font-semibold tracking-tight text-gray-900 hover:text-accent transition">Kha Le</a>
+      <div class="flex gap-6 text-sm font-medium text-gray-600">
+        <a href="index.html"    class="nav-link hover:text-accent transition">About</a>
+        <a href="projects.html" class="nav-link active hover:text-accent transition">Projects</a>
+        <a href="vitae.html"    class="nav-link hover:text-accent transition">Vitae</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-16">
+
+    <h1 class="text-4xl font-bold tracking-tight text-gray-900">Projects</h1>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PROJECT 1 — Dr. N. Schmitzer-Torbert (Wabash College)
+         ════════════════════════════════════════════════════════════════ -->
+    <section>
+      <div class="mb-1">
+        <span class="inline-block text-xs font-medium text-accent bg-blue-50 px-2.5 py-0.5 rounded-full mb-3">Wabash College · 2024 – 2025</span>
+      </div>
+      <h2 class="text-2xl font-semibold leading-snug text-gray-900">
+        Vicarious Trial-and-Error Through Gaze Behavior &amp; Deliberation in a Translational Virtual Navigation Task
+      </h2>
+      <p class="mt-1 text-sm text-muted">Kha Le, Elijah Arnold &amp; N. Schmitzer-Torbert</p>
+
+      <!-- Tabs -->
+      <div class="mt-6 border-b border-gray-200 flex gap-0" role="tablist" data-tabgroup="proj1">
+        <button class="tab-btn active text-sm font-medium px-4 py-2 border-b-2 border-transparent text-gray-500" data-tab="proj1-code" role="tab">Code</button>
+        <button class="tab-btn text-sm font-medium px-4 py-2 border-b-2 border-transparent text-gray-500" data-tab="proj1-abstract" role="tab">Abstract</button>
+        <button class="tab-btn text-sm font-medium px-4 py-2 border-b-2 border-transparent text-gray-500" data-tab="proj1-poster" role="tab">Poster</button>
+      </div>
+
+      <!-- Tab: Code -->
+      <div id="proj1-code" class="tab-panel active pt-6">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  HOW TO ADD YOUR CODE CONTENT                                   ║
+        ║                                                                 ║
+        ║  Option A — Link to a GitHub repo:                              ║
+        ║    Replace the placeholder <a> below with your repo URL.        ║
+        ║    <a href="https://github.com/YOUR_USERNAME/YOUR_REPO"         ║
+        ║       class="text-accent underline">View on GitHub</a>          ║
+        ║                                                                 ║
+        ║  Option B — Embed a code snippet:                               ║
+        ║    Wrap your code in <pre><code>…</code></pre> tags.            ║
+        ║                                                                 ║
+        ║  Option C — Link to a downloadable file:                        ║
+        ║    <a href="code/your_script.R" download>Download R script</a>  ║
+        ║                                                                 ║
+        ║  You can combine multiple options.                              ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
+        <p class="text-sm text-gray-500 italic">Code repository coming soon. Check back for R analysis scripts, eye-tracking data processing pipelines, and computational models.</p>
+      </div>
+
+      <!-- Tab: Abstract -->
+      <div id="proj1-abstract" class="tab-panel pt-6">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  HOW TO ADD YOUR ABSTRACT                                       ║
+        ║                                                                 ║
+        ║  Replace the placeholder text below with your full abstract.    ║
+        ║  Use <p> tags for paragraphs. You can use <em> for emphasis     ║
+        ║  and <strong> for bold terms.                                   ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
+        <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-3">
+          <p>Vicarious trial-and-error (VTE) is a behavioral phenomenon first observed in rodents at choice points during navigation, characterized by deliberative head-scanning movements. This project investigates whether analogous gaze-based VTE signatures emerge in human participants performing a translational virtual navigation foraging task.</p>
+          <p>We recruited 56 participants and used Tobii 5th-generation eye-tracking to capture gaze behavior during an online virtual navigation paradigm. By analyzing gaze sampling patterns, fixation sequences, dwelling times, and movement trajectories, we characterize how visual information gathering maps onto deliberative decision processes in humans — bridging rodent and human models of deliberation.</p>
+        </div>
+      </div>
+
+      <!-- Tab: Poster -->
+      <div id="proj1-poster" class="tab-panel pt-6">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  HOW TO ADD YOUR POSTER                                         ║
+        ║                                                                 ║
+        ║  Option A — Embed a poster image:                               ║
+        ║    Place your poster image (e.g. poster.png) in this folder     ║
+        ║    and update the <img> src below.                              ║
+        ║    <img src="poster_schmitzer-torbert.png"                      ║
+        ║         alt="Research poster" class="w-full rounded-lg" />      ║
+        ║                                                                 ║
+        ║  Option B — Link to a PDF:                                      ║
+        ║    <a href="poster.pdf" class="text-accent underline"           ║
+        ║       target="_blank">View poster (PDF)</a>                     ║
+        ║                                                                 ║
+        ║  You can show both an image preview and a download link.        ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
+        <p class="text-sm text-gray-500 italic">Poster will be uploaded here shortly.</p>
+      </div>
+    </section>
+
+    <!-- ─── Horizontal Divider ─── -->
+    <hr class="border-gray-200" />
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PROJECT 2 — Dr. Joshua Cashaback (University of Delaware)
+         ════════════════════════════════════════════════════════════════ -->
+    <section>
+      <div class="mb-1">
+        <span class="inline-block text-xs font-medium text-accent bg-blue-50 px-2.5 py-0.5 rounded-full mb-3">University of Delaware · Summer 2025</span>
+      </div>
+      <h2 class="text-2xl font-semibold leading-snug text-gray-900">
+        Optimal Feedback Control &amp; Urgency-Gated Decision Models in the Token Task Framework
+      </h2>
+      <p class="mt-1 text-sm text-muted">Kha Le &amp; J. Cashaback's Lab</p>
+
+      <!-- Tabs -->
+      <div class="mt-6 border-b border-gray-200 flex gap-0" role="tablist" data-tabgroup="proj2">
+        <button class="tab-btn active text-sm font-medium px-4 py-2 border-b-2 border-transparent text-gray-500" data-tab="proj2-code" role="tab">Code</button>
+        <button class="tab-btn text-sm font-medium px-4 py-2 border-b-2 border-transparent text-gray-500" data-tab="proj2-description" role="tab">Project Description</button>
+      </div>
+
+      <!-- Tab: Code -->
+      <div id="proj2-code" class="tab-panel active pt-6">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  HOW TO ADD YOUR CODE CONTENT                                   ║
+        ║                                                                 ║
+        ║  Same instructions as Project 1 above.                          ║
+        ║  You can link to GitHub, embed snippets, or provide downloads.  ║
+        ║                                                                 ║
+        ║  Example for a Jupyter notebook:                                ║
+        ║    <a href="notebooks/ofc_model.ipynb" download                 ║
+        ║       class="text-accent underline">                            ║
+        ║       Download OFC model notebook (.ipynb)</a>                  ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
+        <p class="text-sm text-gray-500 italic">Python notebooks and model replications coming soon — including OFC, LQG, and urgency-gated decision simulations.</p>
+      </div>
+
+      <!-- Tab: Project Description -->
+      <div id="proj2-description" class="tab-panel pt-6">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  HOW TO UPDATE THE PROJECT DESCRIPTION                          ║
+        ║                                                                 ║
+        ║  Edit or replace the paragraphs below as your project evolves.  ║
+        ║  Use <p> tags for each paragraph.                               ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
+        <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-3">
+          <p>During a 2.5-month summer internship at the University of Delaware's Health Science Complex, I worked under Dr. Joshua Cashaback in a lab spanning mechanical engineering, physics, and biomechanics. The project centered on building computational models of <em>optimal feedback control</em> (OFC) to investigate how lateral hand movements reflect deliberation prior to decision commitment.</p>
+          <p>Training covered the neuromechanics of human motion: optimal feedback control theory, redundant motor systems, dynamics, linear-quadratic Gaussian (LQG) regulators, Kalman filtering, and cost-function optimization in decision-making. I completed structured assignments in Python (VSCode &amp; Google Colab) and then progressed to replicating four mathematical models of decision-making within the <em>token task framework</em> — a paradigm in which participants observe sequentially revealed tokens and decide when to commit to a left or right reach.</p>
+          <p>My task was to design mathematical models explaining how humans optimally plan and execute movements when facing multiple potential targets simultaneously. I also assisted with experimental data collection using the KINARM exoskeleton robot for musculoskeletal and virtual token tasks (n&nbsp;=&nbsp;4) and participated in bi-weekly lab meetings critiquing project progress.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="border-t border-gray-100 mt-12">
+    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+      <span>&copy; 2025 Kha Le. All rights reserved.</span>
+      <div class="flex gap-4">
+        <a href="mailto:khale.ngoc28@gmail.com" class="hover:text-accent transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ TAB SWITCHING SCRIPT ═══ -->
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.dataset.tab;
+        // Find sibling buttons & panels within same project section
+        const section = btn.closest('section');
+        section.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        section.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
