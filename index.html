@@ -45,6 +45,12 @@
     /* ── Subtle section dividers ── */
     .section-divide { border-top: 1px solid #e5e7eb; }
 
+    /* ── Journey Grid ── */
+    .journey-item { position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1; }
+    .journey-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .journey-item:hover img { transform: scale(1.05); }
+    .journey-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; padding: 12px; font-size: 0.875rem; text-align: center; }
+
     /* ── Print-friendly ── */
     @media print {
       nav, footer { display: none; }
@@ -74,38 +80,43 @@
     <!-- ════════════════════════════════════════════
          HERO SECTION
          ════════════════════════════════════════════ -->
-    <section class="flex flex-col md:flex-row items-start gap-8">
+    <section class="flex flex-col md:flex-row items-start gap-12">
 
-      <!-- ┌──────────────────────────────────────────┐
-           │  PHOTO PLACEHOLDER                        │
-           │  Replace the src="" below with your photo │
-           │  e.g. src="photo.jpg"                     │
-           │  Place your photo file in the same folder │
-           │  as this HTML file.                       │
-           └──────────────────────────────────────────┘ -->
-      <div class="flex-shrink-0">
-        <img
-          src=""
-          alt="Photo of Kha Le"
-          class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover bg-gray-200 border border-gray-200"
-          onerror="this.style.display='none'"
-        />
-        <!-- If no photo is set yet, this gray circle acts as placeholder -->
-        <noscript><div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200"></div></noscript>
-      </div>
-
-      <div class="space-y-3">
+      <!-- Left column: Text content -->
+      <div class="space-y-3 flex-1">
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Kha Le</h1>
-        <p class="text-lg text-accent font-medium">
-          Mathematics &amp; Neuroscience · Computational Modeling · Decision-Making Research
-        </p>
-        <p class="text-base leading-relaxed text-gray-600 max-w-xl">
-          I am a senior at <strong class="text-gray-800">Wabash College</strong> pursuing a B.A. in Mathematics with a concentration in Neuroscience. My research sits at the intersection of computational modeling, decision-making, and motor control — investigating how the brain deliberates and commits to action under uncertainty.
-        </p>
         <p class="text-sm text-muted flex items-center gap-1.5">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
           Crawfordsville, Indiana, USA
         </p>
+        <p class="text-lg text-accent font-medium">
+          Mathematics &amp; Neuroscience · Computational Modeling · Decision-Making Research
+        </p>
+        <p class="text-base leading-relaxed text-gray-600">
+          I am a senior at <strong class="text-gray-800">Wabash College</strong> pursuing a B.A. in Mathematics with a concentration in Neuroscience. My research sits at the intersection of computational modeling, decision-making, and motor control — investigating how the brain deliberates and commits to action under uncertainty.
+        </p>
+      </div>
+
+      <!-- Right column: Photo -->
+      <div class="flex-shrink-0">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  HOW TO UPDATE YOUR PROFILE PHOTO                               ║
+        ║                                                                 ║
+        ║  The photo file is located at: assets/img/IMG_1343.JPG          ║
+        ║  If you want to replace it with a new photo:                    ║
+        ║  1. Export your new photo as JPG or PNG format                  ║
+        ║  2. Place the file in the assets/img/ folder                    ║
+        ║  3. Update the src="" below to point to your new filename:      ║
+        ║     src="assets/img/YOUR_NEW_PHOTO.JPG"                         ║
+        ║  4. Save and push to GitHub                                     ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
+        <img
+          src="assets/img/IMG_1343.JPG"
+          alt="Photo of Kha Le"
+          class="w-48 h-48 md:w-56 md:h-56 rounded-lg object-cover bg-gray-200 border border-gray-200"
+        />
       </div>
     </section>
 
@@ -139,20 +150,12 @@
         <thead class="sr-only"><tr><th>Date</th><th>Description</th></tr></thead>
         <tbody>
           <tr class="border-b border-gray-100">
-            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Jan 2025</td>
-            <td class="py-3 text-sm leading-relaxed">Presented poster at the 25th Wabash Celebration of Student Research, Scholarship and Creative Work.</td>
+            <td class="py-3 pr-6 text-sm font-semibold text-gray-900 whitespace-nowrap align-top">May 31, 2025</td>
+            <td class="py-3 text-sm leading-relaxed text-gray-600">Join Cashaback's Lab at University of Delaware as a Visiting Student</td>
           </tr>
           <tr class="border-b border-gray-100">
-            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Nov 2024</td>
-            <td class="py-3 text-sm leading-relaxed">Presented poster at the 16th Midwest Great Lakes Undergraduate Research Symposium (mGluRs) in Neuroscience, Oberlin, OH.</td>
-          </tr>
-          <tr class="border-b border-gray-100">
-            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Summer 2025</td>
-            <td class="py-3 text-sm leading-relaxed">Completed research internship at the University of Delaware, Health Science Complex, under Dr. Joshua Cashaback.</td>
-          </tr>
-          <tr class="border-b border-gray-100">
-            <td class="py-3 pr-6 text-sm text-muted whitespace-nowrap align-top">Summer 2024</td>
-            <td class="py-3 text-sm leading-relaxed">Awarded Summer Research Grant ($3,600) from the Wabash College Psychology Department.</td>
+            <td class="py-3 pr-6 text-sm font-semibold text-gray-900 whitespace-nowrap align-top">Jan 7, 2025</td>
+            <td class="py-3 text-sm leading-relaxed text-gray-600 font-light">Attend UCL as an Affiliate Student of Applied Mathematics</td>
           </tr>
           <!-- ADD MORE NEWS ENTRIES ABOVE THIS LINE -->
         </tbody>
@@ -169,15 +172,18 @@
       ╔══════════════════════════════════════════════════════════════════╗
       ║  HOW TO ADD PUBLICATIONS                                        ║
       ║                                                                 ║
-      ║  Copy the <li> block below and paste it inside the <ol>.        ║
+      ║  Copy the <li> block below and paste it inside the <ol>,        ║
+      ║  right BEFORE the closing </ol> tag.                            ║
       ║  Replace the content with your own citation.                    ║
       ║  Bold your name with <strong>.                                  ║
       ║  Italicize the title with <em>.                                 ║
+      ║  (Optional: add a link with <a href="url">link text</a>)        ║
       ║                                                                 ║
       ║  TEMPLATE:                                                      ║
       ║  <li class="pl-2 pb-4 text-sm leading-relaxed text-gray-700">  ║
       ║    <strong>Le, K. N.</strong>, Co-Author, A. B., Advisor, C. D. ║
       ║    (YEAR). <em>Title of the paper or poster.</em>               ║
+      ║    <a href="link-to-paper.pdf">View PDF</a>                     ║
       ║    Venue or journal name, Location.                             ║
       ║  </li>                                                          ║
       ║                                                                 ║
@@ -186,16 +192,55 @@
       -->
 
       <ol class="list-decimal list-outside ml-5 space-y-1">
-        <li class="pl-2 pb-4 text-sm leading-relaxed text-gray-700">
-          <strong class="text-gray-900">Le, K. N.</strong>, Arnold, E. O., Schmitzer-Torbert, N. (Jan 24, 2025). <em>Snapshot examination of vicarious-trial-and-error through gaze behavior and deliberation in a translational virtual navigation task.</em> Poster session presented at the 25th Wabash Celebration of Student Research, Scholarship and Creative Work, Crawfordsville, IN.
-        </li>
-        <li class="pl-2 pb-4 text-sm leading-relaxed text-gray-700">
-          <strong class="text-gray-900">Le, K. N.</strong>, Arnold, E. O., Schmitzer-Torbert, N. (Nov 2, 2024). <em>Characterization of vicarious trial-and-error and visual sampling in humans performing a translational virtual navigation foraging task.</em> Poster session presented at the 16th Midwest Great Lakes Undergraduate Research Symposium (mGluRs) in Neuroscience, Oberlin, OH.
-        </li>
-        <!-- ADD MORE PUBLICATIONS ABOVE THIS LINE -->
+        <!-- PUBLICATIONS WILL BE ADDED HERE -->
       </ol>
     </section>
 
+    <!-- ════════════════════════════════════════════
+         MY RECENT JOURNEY
+         ════════════════════════════════════════════ -->
+    <section class="section-divide pt-12">
+      <h2 class="text-2xl font-semibold mb-6">My Recent Journey</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  HOW TO ADD A PHOTO TO THIS SECTION                             ║
+        ║                                                                 ║
+        ║  All your photos are in: assets/journey/                        ║
+        ║  Available files: IMG_0349.JPG, IMG_0804.JPG, IMG_0899.JPG,    ║
+        ║                  IMG_1170.JPG, IMG_1271.JPG                     ║
+        ║                                                                 ║
+        ║  STEP 1: Copy the block below                                   ║
+        ║  <div class="journey-item">                                     ║
+        ║    <img src="assets/journey/IMG_XXXX.JPG"                       ║
+        ║         alt="Brief description of the photo">                   ║
+        ║    <p class="journey-caption">Your caption here</p>             ║
+        ║  </div>                                                         ║
+        ║                                                                 ║
+        ║  STEP 2: Replace IMG_XXXX.JPG with the actual filename from    ║
+        ║          the list above (e.g., IMG_0349.JPG)                    ║
+        ║                                                                 ║
+        ║  STEP 3: Write a short caption describing the photo             ║
+        ║                                                                 ║
+        ║  STEP 4: Paste the block inside the <div class="grid">         ║
+        ║          right BEFORE the closing </div>                        ║
+        ║                                                                 ║
+        ║  TO REMOVE A PHOTO: Simply delete its entire <div>             ║
+        ║                                                                 ║
+        ║  PHOTOS TO ADD:                                                 ║
+        ║  - IMG_0349.JPG                                                 ║
+        ║  - IMG_0804.JPG                                                 ║
+        ║  - IMG_0899.JPG                                                 ║
+        ║  - IMG_1170.JPG                                                 ║
+        ║  - IMG_1271.JPG                                                 ║
+        ║                                                                 ║
+        ║  You can add them in any order or skip any you don't want.     ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
+      </div>
+    </section>
+
+  </main>
 
   <!-- ════════════════════════════════════════════
        FOOTER  (shared across all 3 pages)
