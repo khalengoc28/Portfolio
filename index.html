@@ -45,11 +45,11 @@
     /* ── Subtle section dividers ── */
     .section-divide { border-top: 1px solid #e5e7eb; }
 
-    /* ── Journey Grid ── */
-    .journey-item { position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1; }
-    .journey-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    /* ── Journey: 5 photos in one row, fills full width, no captions ── */
+    .journey-row { display: flex; flex-direction: row; gap: 8px; }
+    .journey-item { flex: 1; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 8px; }
+    .journey-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
     .journey-item:hover img { transform: scale(1.05); }
-    .journey-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; padding: 12px; font-size: 0.875rem; text-align: center; }
 
     /* ── Print-friendly ── */
     @media print {
@@ -201,42 +201,35 @@
          ════════════════════════════════════════════ -->
     <section class="section-divide pt-12">
       <h2 class="text-2xl font-semibold mb-6">My Recent Journey</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!--
-        ╔══════════════════════════════════════════════════════════════════╗
-        ║  HOW TO ADD A PHOTO TO THIS SECTION                             ║
-        ║                                                                 ║
-        ║  All your photos are in: assets/journey/                        ║
-        ║  Available files: IMG_0349.JPG, IMG_0804.JPG, IMG_0899.JPG,    ║
-        ║                  IMG_1170.JPG, IMG_1271.JPG                     ║
-        ║                                                                 ║
-        ║  STEP 1: Copy the block below                                   ║
-        ║  <div class="journey-item">                                     ║
-        ║    <img src="assets/journey/IMG_XXXX.JPG"                       ║
-        ║         alt="Brief description of the photo">                   ║
-        ║    <p class="journey-caption">Your caption here</p>             ║
-        ║  </div>                                                         ║
-        ║                                                                 ║
-        ║  STEP 2: Replace IMG_XXXX.JPG with the actual filename from    ║
-        ║          the list above (e.g., IMG_0349.JPG)                    ║
-        ║                                                                 ║
-        ║  STEP 3: Write a short caption describing the photo             ║
-        ║                                                                 ║
-        ║  STEP 4: Paste the block inside the <div class="grid">         ║
-        ║          right BEFORE the closing </div>                        ║
-        ║                                                                 ║
-        ║  TO REMOVE A PHOTO: Simply delete its entire <div>             ║
-        ║                                                                 ║
-        ║  PHOTOS TO ADD:                                                 ║
-        ║  - IMG_0349.JPG                                                 ║
-        ║  - IMG_0804.JPG                                                 ║
-        ║  - IMG_0899.JPG                                                 ║
-        ║  - IMG_1170.JPG                                                 ║
-        ║  - IMG_1271.JPG                                                 ║
-        ║                                                                 ║
-        ║  You can add them in any order or skip any you don't want.     ║
-        ╚══════════════════════════════════════════════════════════════════╝
-        -->
+      <!--
+        5 photos in one row, equal size, fills full width, no captions.
+        TO ADD A PHOTO: copy a journey-item block and paste inside journey-row.
+        TO REMOVE A PHOTO: delete its entire journey-item block.
+        TO CHANGE PHOTO: update src="assets/journey/FILENAME.JPG"
+        FILES: IMG_0349.JPG · IMG_0804.JPG · IMG_0899.JPG · IMG_1170.JPG · IMG_1271.JPG
+      -->
+      <div class="journey-row">
+
+        <div class="journey-item">
+          <img src="assets/journey/IMG_0349.JPG" alt="Journey photo 1">
+        </div>
+
+        <div class="journey-item">
+          <img src="assets/journey/IMG_0804.JPG" alt="Journey photo 2">
+        </div>
+
+        <div class="journey-item">
+          <img src="assets/journey/IMG_0899.JPG" alt="Journey photo 3">
+        </div>
+
+        <div class="journey-item">
+          <img src="assets/journey/IMG_1170.JPG" alt="Journey photo 4">
+        </div>
+
+        <div class="journey-item">
+          <img src="assets/journey/IMG_1271.JPG" alt="Journey photo 5">
+        </div>
+
       </div>
     </section>
 
